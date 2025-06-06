@@ -36,24 +36,22 @@ document.addEventListener('DOMContentLoaded', () => {
         journalEntries: [],
         totalDebits: 0,
         totalCredits: 0
-    };
-
-    // Available accounts by difficulty
+    };    // Available accounts by difficulty
     const accountLists = {
         easy: [
             "Cash", 
-            "Accounts Receivable", 
+            "Trade Receivables", 
             "Inventory", 
             "Supplies", 
             "Prepaid Insurance", 
             "Equipment", 
             "Furniture", 
-            "Accounts Payable", 
-            "Notes Payable", 
-            "Unearned Revenue", 
-            "Common Stock", 
+            "Trade Payables", 
+            "Loans Payable", 
+            "Deferred Income", 
+            "Ordinary Shares", 
             "Owner's Capital", 
-            "Retained Earnings", 
+            "Retained Profits", 
             "Service Revenue", 
             "Sales Revenue", 
             "Rent Expense", 
@@ -61,11 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
             "Wages Expense", 
             "Supplies Expense", 
             "Insurance Expense"
-        ],
-        medium: [
+        ],        medium: [
             "Cash", 
-            "Accounts Receivable", 
-            "Allowance for Doubtful Accounts", 
+            "Trade Receivables", 
+            "Provision for Doubtful Debts", 
             "Inventory", 
             "Supplies", 
             "Prepaid Insurance", 
@@ -77,22 +74,22 @@ document.addEventListener('DOMContentLoaded', () => {
             "Buildings", 
             "Accumulated Depreciation - Buildings", 
             "Land", 
-            "Accounts Payable", 
+            "Trade Payables", 
             "Wages Payable", 
             "Interest Payable", 
-            "Unearned Revenue", 
-            "Notes Payable", 
+            "Deferred Income", 
+            "Loans Payable", 
             "Mortgage Payable", 
-            "Common Stock", 
-            "Preferred Stock", 
-            "Additional Paid-in Capital", 
-            "Retained Earnings", 
+            "Ordinary Shares", 
+            "Preference Shares", 
+            "Share Premium", 
+            "Retained Profits", 
             "Dividends", 
             "Service Revenue", 
             "Sales Revenue", 
             "Interest Revenue", 
             "Rent Revenue", 
-            "Cost of Goods Sold", 
+            "Cost of Sales", 
             "Rent Expense", 
             "Utilities Expense", 
             "Wages Expense", 
@@ -101,15 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
             "Depreciation Expense", 
             "Interest Expense", 
             "Bad Debt Expense"
-        ],
-        hard: [
+        ],        hard: [
             "Cash", 
             "Short-term Investments", 
             "Treasury Bills", 
             "Trading Securities", 
-            "Accounts Receivable", 
-            "Allowance for Doubtful Accounts", 
-            "Notes Receivable", 
+            "Trade Receivables", 
+            "Provision for Doubtful Debts", 
+            "Bills Receivable", 
             "Interest Receivable", 
             "Inventory", 
             "Supplies", 
@@ -129,30 +125,30 @@ document.addEventListener('DOMContentLoaded', () => {
             "Goodwill", 
             "Trademark", 
             "Copyright", 
-            "Accounts Payable", 
+            "Trade Payables", 
             "Wages Payable", 
             "Interest Payable", 
-            "Income Tax Payable", 
-            "Unearned Revenue", 
-            "Notes Payable", 
-            "Bonds Payable", 
-            "Bond Discount", 
-            "Bond Premium", 
+            "Corporation Tax Payable", 
+            "Deferred Income", 
+            "Loans Payable", 
+            "Debentures Payable", 
+            "Debenture Discount", 
+            "Debenture Premium", 
             "Mortgage Payable", 
             "Deferred Tax Liability", 
-            "Common Stock", 
-            "Preferred Stock", 
-            "Additional Paid-in Capital", 
-            "Retained Earnings", 
-            "Treasury Stock", 
+            "Ordinary Shares", 
+            "Preference Shares", 
+            "Share Premium", 
+            "Retained Profits", 
+            "Treasury Shares", 
             "Dividends", 
             "Service Revenue", 
             "Sales Revenue", 
             "Interest Revenue", 
             "Dividend Revenue", 
             "Rent Revenue", 
-            "Gain on Sale of Assets", 
-            "Cost of Goods Sold", 
+            "Profit on Sale of Assets", 
+            "Cost of Sales", 
             "Rent Expense", 
             "Utilities Expense", 
             "Wages Expense", 
@@ -160,9 +156,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "Supplies Expense", 
             "Insurance Expense", 
             "Depreciation Expense", 
-            "Amortization Expense", 
+            "Amortisation Expense", 
             "Interest Expense", 
-            "Income Tax Expense", 
+            "Corporation Tax Expense", 
             "Bad Debt Expense", 
             "Advertising Expense", 
             "Loss on Sale of Assets"
@@ -171,120 +167,117 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Transaction data by difficulty
     const transactionData = {
-        easy: [
-            {
-                description: "Purchased equipment for $10,000, paying $4,000 in cash and financing the remainder with a note payable.",
+        easy: [            {
+                description: "Purchased equipment for £10,000, paying £4,000 in cash and financing the remainder with a loan payable.",
                 solution: [
                     { account: "Equipment", debit: 10000, credit: 0 },
                     { account: "Cash", debit: 0, credit: 4000 },
-                    { account: "Notes Payable", debit: 0, credit: 6000 }
+                    { account: "Loans Payable", debit: 0, credit: 6000 }
                 ]
             },
             {
-                description: "Received $3,500 cash from clients for services performed.",
+                description: "Received £3,500 cash from clients for services performed.",
                 solution: [
                     { account: "Cash", debit: 3500, credit: 0 },
                     { account: "Service Revenue", debit: 0, credit: 3500 }
                 ]
             },
             {
-                description: "Paid $1,200 for rent for the current month.",
+                description: "Paid £1,200 for rent for the current month.",
                 solution: [
                     { account: "Rent Expense", debit: 1200, credit: 0 },
                     { account: "Cash", debit: 0, credit: 1200 }
                 ]
             },
             {
-                description: "Purchased $800 of supplies on account.",
+                description: "Purchased £800 of supplies on account.",
                 solution: [
                     { account: "Supplies", debit: 800, credit: 0 },
-                    { account: "Accounts Payable", debit: 0, credit: 800 }
+                    { account: "Trade Payables", debit: 0, credit: 800 }
                 ]
             },
             {
-                description: "Owner invested $20,000 cash in the business.",
+                description: "Owner invested £20,000 cash in the business.",
                 solution: [
                     { account: "Cash", debit: 20000, credit: 0 },
                     { account: "Owner's Capital", debit: 0, credit: 20000 }
                 ]
             }
-        ],
-        medium: [
+        ],        medium: [
             {
-                description: "Purchased a delivery vehicle for $35,000, making a down payment of $10,000 in cash and signing a note payable for the balance.",
+                description: "Purchased a delivery vehicle for £35,000, making a down payment of £10,000 in cash and signing a loan agreement for the balance.",
                 solution: [
                     { account: "Vehicles", debit: 35000, credit: 0 },
                     { account: "Cash", debit: 0, credit: 10000 },
-                    { account: "Notes Payable", debit: 0, credit: 25000 }
+                    { account: "Loans Payable", debit: 0, credit: 25000 }
                 ]
             },
             {
-                description: "Recorded $2,500 of depreciation expense for equipment.",
+                description: "Recorded £2,500 of depreciation expense for equipment.",
                 solution: [
                     { account: "Depreciation Expense", debit: 2500, credit: 0 },
                     { account: "Accumulated Depreciation - Equipment", debit: 0, credit: 2500 }
                 ]
             },
             {
-                description: "Paid $5,000 for a two-year insurance policy.",
+                description: "Paid £5,000 for a two-year insurance policy.",
                 solution: [
                     { account: "Prepaid Insurance", debit: 5000, credit: 0 },
                     { account: "Cash", debit: 0, credit: 5000 }
                 ]
             },
             {
-                description: "Billed clients $8,500 for services performed on account.",
+                description: "Billed clients £8,500 for services performed on account.",
                 solution: [
-                    { account: "Accounts Receivable", debit: 8500, credit: 0 },
+                    { account: "Trade Receivables", debit: 8500, credit: 0 },
                     { account: "Service Revenue", debit: 0, credit: 8500 }
                 ]
             },
             {
-                description: "Collected $4,200 from clients on account.",
+                description: "Collected £4,200 from clients on account.",
                 solution: [
                     { account: "Cash", debit: 4200, credit: 0 },
-                    { account: "Accounts Receivable", debit: 0, credit: 4200 }
+                    { account: "Trade Receivables", debit: 0, credit: 4200 }
                 ]
             }
-        ],
-        hard: [
+        ],        hard: [
             {
-                description: "Issued 5,000 shares of common stock at $20 per share, for a total of $100,000.",
+                description: "Issued 5,000 ordinary shares at £20 per share, for a total of £100,000.",
                 solution: [
                     { account: "Cash", debit: 100000, credit: 0 },
-                    { account: "Common Stock", debit: 0, credit: 50000 },
-                    { account: "Additional Paid-in Capital", debit: 0, credit: 50000 }
+                    { account: "Ordinary Shares", debit: 0, credit: 50000 },
+                    { account: "Share Premium", debit: 0, credit: 50000 }
                 ]
             },
             {
-                description: "Issued bonds with a face value of $200,000 for $195,000, reflecting a bond discount.",
+                description: "Issued debentures with a face value of £200,000 for £195,000, reflecting a debenture discount.",
                 solution: [
                     { account: "Cash", debit: 195000, credit: 0 },
-                    { account: "Bond Discount", debit: 5000, credit: 0 },
-                    { account: "Bonds Payable", debit: 0, credit: 200000 }
+                    { account: "Debenture Discount", debit: 5000, credit: 0 },
+                    { account: "Debentures Payable", debit: 0, credit: 200000 }
                 ]
             },
             {
-                description: "Recorded the adjusting entry for bad debt expense, estimating that 2% of the current accounts receivable balance of $150,000 will be uncollectible.",
+                description: "Recorded the adjusting entry for bad debt expense, estimating that 2% of the current trade receivables balance of £150,000 will be uncollectible.",
                 solution: [
                     { account: "Bad Debt Expense", debit: 3000, credit: 0 },
-                    { account: "Allowance for Doubtful Accounts", debit: 0, credit: 3000 }
+                    { account: "Provision for Doubtful Debts", debit: 0, credit: 3000 }
                 ]
             },
             {
-                description: "Sold equipment that originally cost $25,000 with accumulated depreciation of $18,000 for $9,000 cash.",
+                description: "Sold equipment that originally cost £25,000 with accumulated depreciation of £18,000 for £9,000 cash.",
                 solution: [
                     { account: "Cash", debit: 9000, credit: 0 },
                     { account: "Accumulated Depreciation - Equipment", debit: 18000, credit: 0 },
                     { account: "Equipment", debit: 0, credit: 25000 },
-                    { account: "Gain on Sale of Assets", debit: 0, credit: 2000 }
+                    { account: "Profit on Sale of Assets", debit: 0, credit: 2000 }
                 ]
             },
             {
-                description: "Received payment of $20,000 for services to be provided over the next 12 months.",
+                description: "Received payment of £20,000 for services to be provided over the next 12 months.",
                 solution: [
                     { account: "Cash", debit: 20000, credit: 0 },
-                    { account: "Unearned Revenue", debit: 0, credit: 20000 }
+                    { account: "Deferred Income", debit: 0, credit: 20000 }
                 ]
             }
         ]
@@ -537,11 +530,9 @@ document.addEventListener('DOMContentLoaded', () => {
             journalBalancedDisplay.textContent = 'Not Balanced';
             journalBalancedDisplay.style.color = '#86868b';
         }
-    }
-
-    // Format currency values
+    }    // Format currency values
     function formatCurrency(value) {
-        return '$' + value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        return '£' + value.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
 
     // Check if the provided answer is correct

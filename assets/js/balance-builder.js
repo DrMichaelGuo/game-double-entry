@@ -46,89 +46,83 @@ document.addEventListener('DOMContentLoaded', () => {
     // Problem data by difficulty
     const problemData = {
         easy: [
-            {
-                company: "ABC Company is preparing its financial statements for the year ended December 31, 2025.",
+            {                company: "ABC Company is preparing its financial statements for the year ended 31 December 2025.",
                 accounts: [
                     { name: "Cash", value: 15000, type: "asset" },
-                    { name: "Accounts Receivable", value: 8500, type: "asset" },
+                    { name: "Trade Receivables", value: 8500, type: "asset" },
                     { name: "Inventory", value: 12000, type: "asset" },
                     { name: "Equipment", value: 25000, type: "asset" },
-                    { name: "Accounts Payable", value: 7500, type: "liability" },
-                    { name: "Long-term Debt", value: 15000, type: "liability" },
-                    { name: "Common Stock", value: 20000, type: "equity" },
-                    { name: "Retained Earnings", value: 18000, type: "equity" }
+                    { name: "Trade Payables", value: 7500, type: "liability" },
+                    { name: "Long-term Loans", value: 15000, type: "liability" },
+                    { name: "Ordinary Shares", value: 20000, type: "equity" },
+                    { name: "Retained Profits", value: 18000, type: "equity" }
                 ]
             },
-            {
-                company: "XYZ Corporation is finalizing its year-end financial statements for 2025.",
+            {                company: "XYZ Corporation is finalising its year-end financial statements for 2025.",
                 accounts: [
                     { name: "Cash", value: 22000, type: "asset" },
                     { name: "Investments", value: 15000, type: "asset" },
                     { name: "Office Equipment", value: 30000, type: "asset" },
-                    { name: "Accounts Payable", value: 12000, type: "liability" },
-                    { name: "Notes Payable", value: 25000, type: "liability" },
-                    { name: "Common Stock", value: 15000, type: "equity" },
-                    { name: "Retained Earnings", value: 15000, type: "equity" }
+                    { name: "Trade Payables", value: 12000, type: "liability" },
+                    { name: "Loans Payable", value: 25000, type: "liability" },
+                    { name: "Ordinary Shares", value: 15000, type: "equity" },
+                    { name: "Retained Profits", value: 15000, type: "equity" }
                 ]
             },
-            {
-                company: "123 Services LLC is preparing its financial statements for Q2 2025.",
+            {                company: "123 Services Ltd is preparing its financial statements for Q2 2025.",
                 accounts: [
                     { name: "Cash", value: 18500, type: "asset" },
-                    { name: "Accounts Receivable", value: 9500, type: "asset" },
+                    { name: "Trade Receivables", value: 9500, type: "asset" },
                     { name: "Supplies", value: 2000, type: "asset" },
-                    { name: "Accounts Payable", value: 5500, type: "liability" },
+                    { name: "Trade Payables", value: 5500, type: "liability" },
                     { name: "Wages Payable", value: 4500, type: "liability" },
                     { name: "Owner's Capital", value: 20000, type: "equity" }
                 ]
             }
         ],
         medium: [
-            {
-                company: "Global Innovations Inc. is preparing its financial statements for fiscal year 2025.",
+            {                company: "Global Innovations plc is preparing its financial statements for fiscal year 2025.",
                 accounts: [
                     { name: "Cash", value: 35000, type: "asset" },
                     { name: "Short-term Investments", value: 22000, type: "asset" },
-                    { name: "Accounts Receivable", value: 18000, type: "asset" },
+                    { name: "Trade Receivables", value: 18000, type: "asset" },
                     { name: "Inventory", value: 43000, type: "asset" },
                     { name: "Prepaid Insurance", value: 7000, type: "asset" },
                     { name: "Equipment", value: 65000, type: "asset" },
                     { name: "Accumulated Depreciation", value: 15000, type: "contra-asset" },
-                    { name: "Accounts Payable", value: 24000, type: "liability" },
-                    { name: "Unearned Revenue", value: 12000, type: "liability" },
-                    { name: "Long-term Debt", value: 50000, type: "liability" },
-                    { name: "Common Stock", value: 40000, type: "equity" },
-                    { name: "Additional Paid-in Capital", value: 15000, type: "equity" },
-                    { name: "Retained Earnings", value: 34000, type: "equity" }
+                    { name: "Trade Payables", value: 24000, type: "liability" },
+                    { name: "Deferred Income", value: 12000, type: "liability" },
+                    { name: "Long-term Loans", value: 50000, type: "liability" },
+                    { name: "Ordinary Shares", value: 40000, type: "equity" },
+                    { name: "Share Premium", value: 15000, type: "equity" },
+                    { name: "Retained Profits", value: 34000, type: "equity" }
                 ]
             },
-            {
-                company: "Tech Solutions Ltd. is finalizing its quarterly statements for Q3 2025.",
+            {                company: "Tech Solutions Ltd. is finalising its quarterly statements for Q3 2025.",
                 accounts: [
                     { name: "Cash", value: 28000, type: "asset" },
-                    { name: "Accounts Receivable", value: 34000, type: "asset" },
-                    { name: "Allowance for Doubtful Accounts", value: 5000, type: "contra-asset" },
+                    { name: "Trade Receivables", value: 34000, type: "asset" },
+                    { name: "Provision for Doubtful Debts", value: 5000, type: "contra-asset" },
                     { name: "Inventory", value: 42000, type: "asset" },
                     { name: "Buildings", value: 120000, type: "asset" },
                     { name: "Accumulated Depreciation - Buildings", value: 25000, type: "contra-asset" },
                     { name: "Equipment", value: 85000, type: "asset" },
                     { name: "Accumulated Depreciation - Equipment", value: 30000, type: "contra-asset" },
-                    { name: "Accounts Payable", value: 32000, type: "liability" },
+                    { name: "Trade Payables", value: 32000, type: "liability" },
                     { name: "Wages Payable", value: 18000, type: "liability" },
-                    { name: "Bonds Payable", value: 75000, type: "liability" },
-                    { name: "Common Stock", value: 50000, type: "equity" },
-                    { name: "Retained Earnings", value: 74000, type: "equity" }
+                    { name: "Debentures Payable", value: 75000, type: "liability" },
+                    { name: "Ordinary Shares", value: 50000, type: "equity" },
+                    { name: "Retained Profits", value: 74000, type: "equity" }
                 ]
             }
         ],
         hard: [
-            {
-                company: "Multinational Holdings Corp. is preparing its consolidated financial statements for fiscal year 2025.",
+            {                company: "Multinational Holdings plc is preparing its consolidated financial statements for fiscal year 2025.",
                 accounts: [
                     { name: "Cash", value: 125000, type: "asset" },
                     { name: "Short-term Investments", value: 87000, type: "asset" },
-                    { name: "Accounts Receivable", value: 142000, type: "asset" },
-                    { name: "Allowance for Doubtful Accounts", value: 28000, type: "contra-asset" },
+                    { name: "Trade Receivables", value: 142000, type: "asset" },
+                    { name: "Provision for Doubtful Debts", value: 28000, type: "contra-asset" },
                     { name: "Inventory", value: 195000, type: "asset" },
                     { name: "Prepaid Expenses", value: 34000, type: "asset" },
                     { name: "Land", value: 350000, type: "asset" },
@@ -138,17 +132,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     { name: "Accumulated Depreciation - Equipment", value: 155000, type: "contra-asset" },
                     { name: "Patents", value: 180000, type: "asset" },
                     { name: "Goodwill", value: 250000, type: "asset" },
-                    { name: "Accounts Payable", value: 86000, type: "liability" },
+                    { name: "Trade Payables", value: 86000, type: "liability" },
                     { name: "Accrued Expenses", value: 47000, type: "liability" },
-                    { name: "Income Tax Payable", value: 65000, type: "liability" },
-                    { name: "Unearned Revenue", value: 53000, type: "liability" },
-                    { name: "Notes Payable", value: 175000, type: "liability" },
-                    { name: "Bonds Payable", value: 450000, type: "liability" },
+                    { name: "Corporation Tax Payable", value: 65000, type: "liability" },
+                    { name: "Deferred Income", value: 53000, type: "liability" },
+                    { name: "Loans Payable", value: 175000, type: "liability" },
+                    { name: "Debentures Payable", value: 450000, type: "liability" },
                     { name: "Deferred Tax Liability", value: 72000, type: "liability" },
-                    { name: "Common Stock", value: 500000, type: "equity" },
-                    { name: "Additional Paid-in Capital", value: 325000, type: "equity" },
-                    { name: "Treasury Stock", value: 120000, type: "contra-equity" },
-                    { name: "Retained Earnings", value: 422000, type: "equity" }
+                    { name: "Ordinary Shares", value: 500000, type: "equity" },
+                    { name: "Share Premium", value: 325000, type: "equity" },
+                    { name: "Treasury Shares", value: 120000, type: "contra-equity" },
+                    { name: "Retained Profits", value: 422000, type: "equity" }
                 ]
             }
         ]
@@ -189,13 +183,11 @@ document.addEventListener('DOMContentLoaded', () => {
         gameState.liabilityAccounts = [];
         gameState.equityAccounts = [];
         gameState.totalAssets = 0;
-        gameState.totalLiabEquity = 0;
-
-        // Reset UI displays
+        gameState.totalLiabEquity = 0;        // Reset UI displays
         scoreDisplay.textContent = '0';
         timerDisplay.textContent = '00:00';
-        totalAssetsDisplay.textContent = '$0';
-        totalLiabEquityDisplay.textContent = '$0';
+        totalAssetsDisplay.textContent = '£0';
+        totalLiabEquityDisplay.textContent = '£0';
         balanceResultDisplay.textContent = 'Not Balanced';
         balanceResultDisplay.style.color = '#86868b';
         
@@ -298,11 +290,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             return total + account.value;
         }, 0);
-    }
-
-    // Format currency values
+    }    // Format currency values
     function formatCurrency(value) {
-        return '$' + value.toLocaleString('en-US');
+        return '£' + value.toLocaleString('en-GB');
     }
 
     // Check if the provided solution is correct

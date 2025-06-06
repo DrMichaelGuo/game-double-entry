@@ -39,99 +39,96 @@ document.addEventListener('DOMContentLoaded', () => {
     // Transaction data by difficulty
     const transactionData = {
         easy: [
-            {
-                description: "Purchased office equipment for $5,000 in cash.",
+            {                description: "Purchased office equipment for £5,000 in cash.",
                 correctDebit: "Office Equipment",
                 correctCredit: "Cash",
-                accounts: ["Office Equipment", "Cash", "Accounts Payable", "Office Supplies", "Equipment Expense"]
+                accounts: ["Office Equipment", "Cash", "Trade Payables", "Office Supplies", "Equipment Expense"]
             },
             {
-                description: "Received $3,000 cash from clients for services performed.",
+                description: "Received £3,000 cash from clients for services performed.",
                 correctDebit: "Cash",
                 correctCredit: "Service Revenue",
-                accounts: ["Cash", "Service Revenue", "Accounts Receivable", "Unearned Revenue", "Sales"]
+                accounts: ["Cash", "Service Revenue", "Trade Receivables", "Deferred Income", "Sales"]
             },
             {
-                description: "Paid $1,200 rent for the current month.",
+                description: "Paid £1,200 rent for the current month.",
                 correctDebit: "Rent Expense",
                 correctCredit: "Cash",
-                accounts: ["Rent Expense", "Cash", "Accounts Payable", "Prepaid Rent", "Office Expense"]
+                accounts: ["Rent Expense", "Cash", "Trade Payables", "Prepaid Rent", "Office Expense"]
             },
             {
-                description: "Owner invested $10,000 cash into the business.",
+                description: "Owner invested £10,000 cash into the business.",
                 correctDebit: "Cash",
                 correctCredit: "Owner's Capital",
-                accounts: ["Cash", "Owner's Capital", "Common Stock", "Investment Revenue", "Notes Payable"]
+                accounts: ["Cash", "Owner's Capital", "Ordinary Shares", "Investment Revenue", "Loans Payable"]
             },
             {
-                description: "Purchased $800 of office supplies on account.",
+                description: "Purchased £800 of office supplies on account.",
                 correctDebit: "Office Supplies",
-                correctCredit: "Accounts Payable",
-                accounts: ["Office Supplies", "Accounts Payable", "Cash", "Supplies Expense", "Prepaid Expenses"]
+                correctCredit: "Trade Payables",
+                accounts: ["Office Supplies", "Trade Payables", "Cash", "Supplies Expense", "Prepaid Expenses"]
             }
         ],
         medium: [
-            {
-                description: "Paid $2,500 to settle accounts payable from previous purchase.",
-                correctDebit: "Accounts Payable",
+            {                description: "Paid £2,500 to settle trade payables from previous purchase.",
+                correctDebit: "Trade Payables",
                 correctCredit: "Cash",
-                accounts: ["Accounts Payable", "Cash", "Accounts Receivable", "Notes Payable", "Expenses Payable"]
+                accounts: ["Trade Payables", "Cash", "Trade Receivables", "Loans Payable", "Accrued Expenses"]
             },
             {
-                description: "Billed clients $4,500 for services rendered on account.",
-                correctDebit: "Accounts Receivable",
+                description: "Billed clients £4,500 for services rendered on account.",
+                correctDebit: "Trade Receivables",
                 correctCredit: "Service Revenue",
-                accounts: ["Accounts Receivable", "Service Revenue", "Cash", "Unearned Revenue", "Sales"]
+                accounts: ["Trade Receivables", "Service Revenue", "Cash", "Deferred Income", "Sales"]
             },
             {
-                description: "Received $1,800 advance payment from customer for services to be provided next month.",
+                description: "Received £1,800 advance payment from customer for services to be provided next month.",
                 correctDebit: "Cash",
-                correctCredit: "Unearned Revenue",
-                accounts: ["Cash", "Unearned Revenue", "Service Revenue", "Accounts Receivable", "Prepaid Expenses"]
+                correctCredit: "Deferred Income",
+                accounts: ["Cash", "Deferred Income", "Service Revenue", "Trade Receivables", "Prepaid Expenses"]
             },
             {
-                description: "Recorded depreciation of $1,200 on equipment.",
+                description: "Recorded depreciation of £1,200 on equipment.",
                 correctDebit: "Depreciation Expense",
                 correctCredit: "Accumulated Depreciation",
-                accounts: ["Depreciation Expense", "Accumulated Depreciation", "Equipment", "Cash", "Depreciation Payable"]
+                accounts: ["Depreciation Expense", "Accumulated Depreciation", "Equipment", "Cash", "Accrued Expenses"]
             },
             {
-                description: "Paid $3,200 for a two-year insurance policy in advance.",
+                description: "Paid £3,200 for a two-year insurance policy in advance.",
                 correctDebit: "Prepaid Insurance",
                 correctCredit: "Cash",
-                accounts: ["Prepaid Insurance", "Cash", "Insurance Expense", "Accounts Payable", "Insurance Payable"]
+                accounts: ["Prepaid Insurance", "Cash", "Insurance Expense", "Trade Payables", "Accrued Expenses"]
             }
         ],
         hard: [
-            {
-                description: "Recorded adjusting entry for $600 of accrued wages at month-end.",
+            {                description: "Recorded adjusting entry for £600 of accrued wages at month-end.",
                 correctDebit: "Wage Expense",
                 correctCredit: "Wages Payable",
                 accounts: ["Wage Expense", "Wages Payable", "Cash", "Prepaid Wages", "Accrued Expenses"]
             },
             {
-                description: "Sold equipment with original cost of $8,000 and accumulated depreciation of $5,000 for $2,500 cash.",
+                description: "Sold equipment with original cost of £8,000 and accumulated depreciation of £5,000 for £2,500 cash.",
                 correctDebit: "Cash, Accumulated Depreciation",
                 correctCredit: "Equipment, Loss on Sale",
                 accounts: ["Cash", "Accumulated Depreciation", "Equipment", "Loss on Sale", "Gain on Sale"]
             },
             {
-                description: "Recognized $1,500 of previously unearned revenue upon completion of services.",
-                correctDebit: "Unearned Revenue",
+                description: "Recognised £1,500 of previously deferred income upon completion of services.",
+                correctDebit: "Deferred Income",
                 correctCredit: "Service Revenue",
-                accounts: ["Unearned Revenue", "Service Revenue", "Cash", "Accounts Receivable", "Deferred Revenue"]
+                accounts: ["Deferred Income", "Service Revenue", "Cash", "Trade Receivables", "Deferred Revenue"]
             },
             {
-                description: "Issued bonds with par value of $50,000 for $48,000 cash (discount).",
-                correctDebit: "Cash, Bond Discount",
-                correctCredit: "Bonds Payable",
-                accounts: ["Cash", "Bond Discount", "Bonds Payable", "Bond Premium", "Interest Expense"]
+                description: "Issued debentures with par value of £50,000 for £48,000 cash (discount).",
+                correctDebit: "Cash, Debenture Discount",
+                correctCredit: "Debentures Payable",
+                accounts: ["Cash", "Debenture Discount", "Debentures Payable", "Debenture Premium", "Interest Expense"]
             },
             {
-                description: "Recognized $1,200 of previously prepaid rent expense that has now expired.",
+                description: "Recognised £1,200 of previously prepaid rent expense that has now expired.",
                 correctDebit: "Rent Expense",
                 correctCredit: "Prepaid Rent",
-                accounts: ["Rent Expense", "Prepaid Rent", "Cash", "Accounts Payable", "Accrued Expenses"]
+                accounts: ["Rent Expense", "Prepaid Rent", "Cash", "Trade Payables", "Accrued Expenses"]
             }
         ]
     };
