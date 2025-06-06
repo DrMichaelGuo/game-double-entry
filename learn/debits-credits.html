@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debits & Credits | Double Entry</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .learn-page-content {
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .learn-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        .learn-table th, .learn-table td {
+            border: 1px solid #e6e6e6;
+            padding: 1rem;
+            text-align: left;
+        }
+        .learn-table th {
+            background-color: #f5f5f7;
+        }
+        .example-box {
+            background-color: #f5f5f7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .debit-column, .credit-column {
+            width: 50%;
+            float: left;
+        }
+        .t-account {
+            margin: 1.5rem 0;
+            border-top: 2px solid #000;
+            position: relative;
+        }
+        .t-account:before {
+            content: "";
+            height: 100%;
+            width: 1px;
+            background-color: #000;
+            position: absolute;
+            left: 50%;
+            top: 0;
+        }
+        .t-account-header {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .t-account-content {
+            display: flex;
+        }
+        .t-account-content div {
+            width: 50%;
+            padding: 5px 10px;
+        }
+        .t-account-label {
+            display: flex;
+            justify-content: space-between;
+        }
+        .t-account-label div {
+            width: 50%;
+            text-align: center;
+            font-weight: bold;
+        }
+        .clearfix {
+            clear: both;
+        }
+        .back-link {
+            display: inline-block;
+            margin: 1rem 0;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">Double<span>Entry</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#games">Games</a></li>
+                <li><a href="../index.html#learn">Learn</a></li>
+                <li><a href="../index.html#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="game-header">
+            <div class="container">
+                <h1>Debits & Credits</h1>
+                <p>Understanding the fundamental principle of double entry bookkeeping</p>
+            </div>
+        </section>
+
+        <section class="learn-page-content">
+            <a href="../index.html#learn" class="back-link">← Back to Learn</a>
+            
+            <h2>The Foundation of Double Entry</h2>
+            <p>Double entry bookkeeping is based on the fundamental principle that for every financial transaction, at least two accounts are affected, and the total debits must equal the total credits.</p>
+            
+            <h3>The Dual Effect</h3>
+            <p>Every transaction has a dual effect on the accounting equation:</p>
+            <div class="example-box">
+                <strong>Assets = Liabilities + Equity</strong>
+                <p>When you record a transaction, the accounting equation must stay in balance.</p>
+            </div>
+
+            <h2>Debit and Credit Rules</h2>
+            <p>In accounting, "debit" refers to the left side of an account, and "credit" refers to the right side. The effect of debits and credits depends on the type of account:</p>
+            
+            <div class="learn-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Account Type</th>
+                            <th>Debit Effect</th>
+                            <th>Credit Effect</th>
+                            <th>Normal Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Asset</td>
+                            <td>Increase</td>
+                            <td>Decrease</td>
+                            <td>Debit</td>
+                        </tr>
+                        <tr>
+                            <td>Liability</td>
+                            <td>Decrease</td>
+                            <td>Increase</td>
+                            <td>Credit</td>
+                        </tr>
+                        <tr>
+                            <td>Equity</td>
+                            <td>Decrease</td>
+                            <td>Increase</td>
+                            <td>Credit</td>
+                        </tr>
+                        <tr>
+                            <td>Revenue</td>
+                            <td>Decrease</td>
+                            <td>Increase</td>
+                            <td>Credit</td>
+                        </tr>
+                        <tr>
+                            <td>Expense</td>
+                            <td>Increase</td>
+                            <td>Decrease</td>
+                            <td>Debit</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>T-Account Representation</h2>
+            <p>T-accounts are a visual representation of individual general ledger accounts. The "T" format has debits on the left and credits on the right:</p>
+            
+            <div class="example-box">
+                <div class="t-account-header">Cash</div>
+                <div class="t-account-label">
+                    <div>Debit</div>
+                    <div>Credit</div>
+                </div>
+                <div class="t-account">
+                    <div class="t-account-content">
+                        <div>£5,000</div>
+                        <div>£1,500</div>
+                    </div>
+                </div>
+                <p>This T-account shows that Cash was debited for £5,000 (increasing the asset) and later credited for £1,500 (decreasing the asset).</p>
+            </div>
+
+            <h2>Example Transaction</h2>
+            <p>Let's look at a simple transaction: Purchasing equipment for £10,000 in cash.</p>
+            
+            <div class="example-box">
+                <p><strong>Journal Entry:</strong></p>
+                <div class="learn-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Account</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Equipment</td>
+                                <td>£10,000</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Cash</td>
+                                <td></td>
+                                <td>£10,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><strong>Analysis:</strong></p>
+                <ul>
+                    <li>Equipment (asset) increases, so it's debited.</li>
+                    <li>Cash (asset) decreases, so it's credited.</li>
+                    <li>The total debits (£10,000) equal the total credits (£10,000), keeping the accounting equation in balance.</li>
+                </ul>
+            </div>
+
+            <h2>The Golden Rules</h2>
+            <ol>
+                <li>Debit what comes in, Credit what goes out</li>
+                <li>Debit the receiver, Credit the giver</li>
+                <li>Debit all expenses and losses, Credit all incomes and gains</li>
+            </ol>
+
+            <h2>Why This Matters</h2>
+            <p>The debit and credit system provides:</p>
+            <ul>
+                <li>A built-in error detection mechanism (debits must equal credits)</li>
+                <li>A complete record of how every transaction affects the business</li>
+                <li>The foundation for accurate financial reporting</li>
+            </ul>
+
+            <a href="../index.html#learn" class="back-link">← Back to Learn</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="../index.html">Double<span>Entry</span></a>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="../index.html#games">Games</a></li>
+                    <li><a href="../index.html#learn">Learn</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>contact@doubleentry.edu</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DoubleEntry. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Statements | Double Entry</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .learn-page-content {
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .learn-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        .learn-table th, .learn-table td {
+            border: 1px solid #e6e6e6;
+            padding: 1rem;
+            text-align: left;
+        }
+        .learn-table th {
+            background-color: #f5f5f7;
+        }
+        .example-box {
+            background-color: #f5f5f7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .financial-statement {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .financial-statement th, .financial-statement td {
+            padding: 0.75rem;
+        }
+        .financial-statement th {
+            text-align: left;
+            font-weight: 600;
+        }
+        .financial-statement td {
+            text-align: right;
+        }
+        .financial-statement .total {
+            font-weight: 600;
+            border-top: 1px solid #000;
+        }
+        .financial-statement .section-header {
+            font-weight: 600;
+            padding-top: 1rem;
+        }
+        .financial-statement .indent {
+            padding-left: 2rem;
+        }
+        .statement-container {
+            margin: 2rem 0;
+        }
+        .statement-title {
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin: 1rem 0;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">Double<span>Entry</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#games">Games</a></li>
+                <li><a href="../index.html#learn">Learn</a></li>
+                <li><a href="../index.html#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="game-header">
+            <div class="container">
+                <h1>Financial Statements</h1>
+                <p>Understanding how double entry accounting leads to accurate financial reporting</p>
+            </div>
+        </section>
+
+        <section class="learn-page-content">
+            <a href="../index.html#learn" class="back-link">← Back to Learn</a>
+            
+            <h2>The Purpose of Financial Statements</h2>
+            <p>Financial statements are structured reports that summarize a company's financial activities and position. They serve as the final output of the accounting process and provide essential information to various stakeholders.</p>
+
+            <h2>The Three Main Financial Statements</h2>
+            <div class="learn-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Statement</th>
+                            <th>Purpose</th>
+                            <th>Time Frame</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Income Statement (Profit & Loss)</td>
+                            <td>Shows revenues and expenses to determine profitability</td>
+                            <td>For a period (e.g., month, quarter, year)</td>
+                        </tr>
+                        <tr>
+                            <td>Statement of Financial Position (Balance Sheet)</td>
+                            <td>Shows assets, liabilities, and equity</td>
+                            <td>As of a specific date</td>
+                        </tr>
+                        <tr>
+                            <td>Cash Flow Statement</td>
+                            <td>Shows cash inflows and outflows</td>
+                            <td>For a period (e.g., month, quarter, year)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>1. Income Statement (Profit & Loss)</h2>
+            <p>The Income Statement shows whether a business is profitable by reporting revenues earned and expenses incurred during a specific period.</p>
+            
+            <div class="example-box">
+                <div class="statement-container">
+                    <div class="statement-title">ABC COMPANY<br>Income Statement<br>For the Year Ended 31 December 2025</div>
+                    <table class="financial-statement">
+                        <tr>
+                            <th>Revenue</th>
+                            <td>£125,000</td>
+                        </tr>
+                        <tr>
+                            <th>Less: Cost of Sales</th>
+                            <td>(£48,000)</td>
+                        </tr>
+                        <tr class="total">
+                            <th>Gross Profit</th>
+                            <td>£77,000</td>
+                        </tr>
+                        <tr>
+                            <th class="section-header">Operating Expenses:</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Rent Expense</th>
+                            <td>£15,000</td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Wages Expense</th>
+                            <td>£28,000</td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Utilities Expense</th>
+                            <td>£5,200</td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Depreciation Expense</th>
+                            <td>£4,800</td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Insurance Expense</th>
+                            <td>£3,200</td>
+                        </tr>
+                        <tr>
+                            <th>Total Operating Expenses</th>
+                            <td>(£56,200)</td>
+                        </tr>
+                        <tr>
+                            <th>Operating Profit</th>
+                            <td>£20,800</td>
+                        </tr>
+                        <tr>
+                            <th>Interest Expense</th>
+                            <td>(£2,500)</td>
+                        </tr>
+                        <tr class="total">
+                            <th>Profit Before Tax</th>
+                            <td>£18,300</td>
+                        </tr>
+                        <tr>
+                            <th>Corporation Tax</th>
+                            <td>(£3,660)</td>
+                        </tr>
+                        <tr class="total">
+                            <th>Net Profit</th>
+                            <td>£14,640</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <h2>2. Statement of Financial Position (Balance Sheet)</h2>
+            <p>The Balance Sheet shows a company's financial position at a specific point in time, reporting on assets, liabilities, and equity.</p>
+            
+            <div class="example-box">
+                <div class="statement-container">
+                    <div class="statement-title">ABC COMPANY<br>Statement of Financial Position<br>As of 31 December 2025</div>
+                    <table class="financial-statement">
+                        <tr>
+                            <th class="section-header">Assets</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="section-header">Current Assets:</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Cash</th>
+                            <td>£42,000</td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Trade Receivables</th>
+                            <td>£28,500</td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Inventory</th>
+                            <td>£35,000</td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Prepaid Expenses</th>
+                            <td>£4,500</td>
+                        </tr>
+                        <tr>
+                            <th>Total Current Assets</th>
+                            <td>£110,000</td>
+                        </tr>
+                        <tr>
+                            <th class="section-header">Non-current Assets:</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Equipment</th>
+                            <td>£75,000</td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Less: Accumulated Depreciation</th>
+                            <td>(£25,000)</td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Land</th>
+                            <td>£90,000</td>
+                        </tr>
+                        <tr>
+                            <th>Total Non-current Assets</th>
+                            <td>£140,000</td>
+                        </tr>
+                        <tr class="total">
+                            <th>Total Assets</th>
+                            <td>£250,000</td>
+                        </tr>
+                        <tr>
+                            <th class="section-header">Liabilities and Equity</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="section-header">Current Liabilities:</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Trade Payables</th>
+                            <td>£24,000</td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Wages Payable</th>
+                            <td>£8,500</td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Corporation Tax Payable</th>
+                            <td>£3,660</td>
+                        </tr>
+                        <tr>
+                            <th>Total Current Liabilities</th>
+                            <td>£36,160</td>
+                        </tr>
+                        <tr>
+                            <th class="section-header">Non-current Liabilities:</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Long-term Loans</th>
+                            <td>£65,000</td>
+                        </tr>
+                        <tr>
+                            <th>Total Non-current Liabilities</th>
+                            <td>£65,000</td>
+                        </tr>
+                        <tr>
+                            <th>Total Liabilities</th>
+                            <td>£101,160</td>
+                        </tr>
+                        <tr>
+                            <th class="section-header">Equity:</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Ordinary Shares</th>
+                            <td>£100,000</td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Retained Profits</th>
+                            <td>£48,840</td>
+                        </tr>
+                        <tr>
+                            <th>Total Equity</th>
+                            <td>£148,840</td>
+                        </tr>
+                        <tr class="total">
+                            <th>Total Liabilities and Equity</th>
+                            <td>£250,000</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <h2>3. Cash Flow Statement</h2>
+            <p>The Cash Flow Statement shows how cash moves in and out of a business during a specific period, categorized into operating, investing, and financing activities.</p>
+            
+            <div class="example-box">
+                <div class="statement-container">
+                    <div class="statement-title">ABC COMPANY<br>Cash Flow Statement<br>For the Year Ended 31 December 2025</div>
+                    <table class="financial-statement">
+                        <tr>
+                            <th class="section-header">Cash Flows from Operating Activities:</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Net Profit</th>
+                            <td>£14,640</td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Add: Depreciation Expense</th>
+                            <td>£4,800</td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Increase in Trade Receivables</th>
+                            <td>(£6,500)</td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Increase in Inventory</th>
+                            <td>(£8,000)</td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Increase in Trade Payables</th>
+                            <td>£4,200</td>
+                        </tr>
+                        <tr class="total">
+                            <th>Net Cash from Operating Activities</th>
+                            <td>£9,140</td>
+                        </tr>
+                        <tr>
+                            <th class="section-header">Cash Flows from Investing Activities:</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Purchase of Equipment</th>
+                            <td>(£15,000)</td>
+                        </tr>
+                        <tr class="total">
+                            <th>Net Cash used in Investing Activities</th>
+                            <td>(£15,000)</td>
+                        </tr>
+                        <tr>
+                            <th class="section-header">Cash Flows from Financing Activities:</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Proceeds from Long-term Loan</th>
+                            <td>£20,000</td>
+                        </tr>
+                        <tr>
+                            <th class="indent">Dividend Paid</th>
+                            <td>(£5,000)</td>
+                        </tr>
+                        <tr class="total">
+                            <th>Net Cash from Financing Activities</th>
+                            <td>£15,000</td>
+                        </tr>
+                        <tr class="total">
+                            <th>Net Increase in Cash</th>
+                            <td>£9,140</td>
+                        </tr>
+                        <tr>
+                            <th>Cash at Beginning of Year</th>
+                            <td>£32,860</td>
+                        </tr>
+                        <tr class="total">
+                            <th>Cash at End of Year</th>
+                            <td>£42,000</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <h2>How Double Entry Connects to Financial Statements</h2>
+            <p>Double entry bookkeeping ensures that financial statements are accurate and consistent:</p>
+            <ul>
+                <li><strong>Balance Sheet Equation:</strong> The double entry system guarantees that Assets = Liabilities + Equity</li>
+                <li><strong>Income Statement:</strong> Revenue and expense accounts correctly flow to the Income Statement</li>
+                <li><strong>Retained Profits:</strong> Net income from the Income Statement increases Retained Profits on the Balance Sheet</li>
+                <li><strong>Cash Flow Statement:</strong> Changes in balance sheet accounts help determine cash flows</li>
+            </ul>
+
+            <h2>UK Financial Statement Terminology</h2>
+            <div class="learn-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>UK Term</th>
+                            <th>US Equivalent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Profit and Loss Statement</td>
+                            <td>Income Statement</td>
+                        </tr>
+                        <tr>
+                            <td>Statement of Financial Position</td>
+                            <td>Balance Sheet</td>
+                        </tr>
+                        <tr>
+                            <td>Turnover</td>
+                            <td>Revenue</td>
+                        </tr>
+                        <tr>
+                            <td>Corporation Tax</td>
+                            <td>Income Tax</td>
+                        </tr>
+                        <tr>
+                            <td>Fixed Assets</td>
+                            <td>Non-current Assets</td>
+                        </tr>
+                        <tr>
+                            <td>Debtors</td>
+                            <td>Accounts Receivable</td>
+                        </tr>
+                        <tr>
+                            <td>Creditors</td>
+                            <td>Accounts Payable</td>
+                        </tr>
+                        <tr>
+                            <td>Share Capital</td>
+                            <td>Common Stock</td>
+                        </tr>
+                        <tr>
+                            <td>Profit for the Year</td>
+                            <td>Net Income</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <a href="../index.html#learn" class="back-link">← Back to Learn</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="../index.html">Double<span>Entry</span></a>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="../index.html#games">Games</a></li>
+                    <li><a href="../index.html#learn">Learn</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>contact@doubleentry.edu</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DoubleEntry. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ledger | Double Entry</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .learn-page-content {
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .learn-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        .learn-table th, .learn-table td {
+            border: 1px solid #e6e6e6;
+            padding: 1rem;
+            text-align: left;
+        }
+        .learn-table th {
+            background-color: #f5f5f7;
+        }
+        .example-box {
+            background-color: #f5f5f7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .ledger-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        .ledger-step {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+        .ledger-step:not(:last-child):after {
+            content: "→";
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            font-size: 24px;
+            color: #0066cc;
+        }
+        .t-account {
+            margin: 1.5rem 0;
+            border-top: 2px solid #000;
+            position: relative;
+        }
+        .t-account:before {
+            content: "";
+            height: 100%;
+            width: 1px;
+            background-color: #000;
+            position: absolute;
+            left: 50%;
+            top: 0;
+        }
+        .t-account-header {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .t-account-content {
+            display: flex;
+        }
+        .t-account-content div {
+            width: 50%;
+            padding: 5px 10px;
+        }
+        .t-account-label {
+            display: flex;
+            justify-content: space-between;
+        }
+        .t-account-label div {
+            width: 50%;
+            text-align: center;
+            font-weight: bold;
+        }
+        .back-link {
+            display: inline-block;
+            margin: 1rem 0;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .ledger-step:not(:last-child):after {
+                content: "↓";
+                position: static;
+                display: block;
+                text-align: center;
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">Double<span>Entry</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#games">Games</a></li>
+                <li><a href="../index.html#learn">Learn</a></li>
+                <li><a href="../index.html#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="game-header">
+            <div class="container">
+                <h1>The Ledger</h1>
+                <p>Understanding how transactions are recorded and tracked in accounting</p>
+            </div>
+        </section>
+
+        <section class="learn-page-content">
+            <a href="../index.html#learn" class="back-link">← Back to Learn</a>
+            
+            <h2>What is a Ledger?</h2>
+            <p>A ledger is a book or collection of accounts where transactions are recorded. In today's accounting systems, ledgers are typically computerized, but the concept remains the same: to organize financial information by account.</p>
+
+            <h2>Types of Ledgers</h2>
+            <div class="learn-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ledger Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>General Ledger</td>
+                            <td>The main accounting record containing all accounts used by the business</td>
+                        </tr>
+                        <tr>
+                            <td>Subsidiary Ledgers</td>
+                            <td>Detailed records supporting specific general ledger accounts</td>
+                        </tr>
+                        <tr>
+                            <td>Sales Ledger</td>
+                            <td>Records all sales made on credit and tracks customer balances (Trade Receivables)</td>
+                        </tr>
+                        <tr>
+                            <td>Purchase Ledger</td>
+                            <td>Records all purchases made on credit and tracks supplier balances (Trade Payables)</td>
+                        </tr>
+                        <tr>
+                            <td>Cash Book</td>
+                            <td>Records all cash receipts and payments</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>The Accounting Cycle</h2>
+            <p>The ledger is a central component in the accounting cycle:</p>
+            
+            <div class="ledger-flow">
+                <div class="ledger-step">
+                    <h3>1. Transactions</h3>
+                    <p>Business events with financial impact</p>
+                </div>
+                <div class="ledger-step">
+                    <h3>2. Journal Entries</h3>
+                    <p>Record debits and credits for each transaction</p>
+                </div>
+                <div class="ledger-step">
+                    <h3>3. Posting</h3>
+                    <p>Transfer information to ledger accounts</p>
+                </div>
+                <div class="ledger-step">
+                    <h3>4. Trial Balance</h3>
+                    <p>List all accounts with their balances</p>
+                </div>
+                <div class="ledger-step">
+                    <h3>5. Financial Statements</h3>
+                    <p>Prepare reports from ledger information</p>
+                </div>
+            </div>
+
+            <h2>Journalizing vs. Posting</h2>
+            <p>These are two distinct but related processes in recording transactions:</p>
+            
+            <div class="learn-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Journalizing</th>
+                            <th>Posting</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Recording transactions in a journal</td>
+                            <td>Transferring journal entries to the ledger</td>
+                        </tr>
+                        <tr>
+                            <td>Chronological order</td>
+                            <td>Organized by account</td>
+                        </tr>
+                        <tr>
+                            <td>First step in recording</td>
+                            <td>Second step in recording</td>
+                        </tr>
+                        <tr>
+                            <td>Book of original entry</td>
+                            <td>Book of final entry</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Example: From Journal to Ledger</h2>
+            <div class="example-box">
+                <p><strong>Journal Entry:</strong> Purchase equipment for £5,000 in cash on 6 June 2025.</p>
+                <div class="learn-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Account</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>06/06/2025</td>
+                                <td>Equipment</td>
+                                <td>£5,000</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Cash</td>
+                                <td></td>
+                                <td>£5,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p><strong>Posting to Ledger:</strong></p>
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+                    <div style="flex: 0 0 48%;">
+                        <div class="t-account-header">Equipment</div>
+                        <div class="t-account-label">
+                            <div>Debit</div>
+                            <div>Credit</div>
+                        </div>
+                        <div class="t-account">
+                            <div class="t-account-content">
+                                <div>06/06/25 £5,000</div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="flex: 0 0 48%;">
+                        <div class="t-account-header">Cash</div>
+                        <div class="t-account-label">
+                            <div>Debit</div>
+                            <div>Credit</div>
+                        </div>
+                        <div class="t-account">
+                            <div class="t-account-content">
+                                <div></div>
+                                <div>06/06/25 £5,000</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Trial Balance</h2>
+            <p>After all transactions are posted to the ledger, a trial balance is prepared to ensure that the total debits equal the total credits.</p>
+            
+            <div class="example-box">
+                <p><strong>Simple Trial Balance as of June 30, 2025:</strong></p>
+                <div class="learn-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Account</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Cash</td>
+                                <td>£8,000</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Trade Receivables</td>
+                                <td>£12,000</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Equipment</td>
+                                <td>£25,000</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Trade Payables</td>
+                                <td></td>
+                                <td>£7,500</td>
+                            </tr>
+                            <tr>
+                                <td>Loans Payable</td>
+                                <td></td>
+                                <td>£15,000</td>
+                            </tr>
+                            <tr>
+                                <td>Owner's Capital</td>
+                                <td></td>
+                                <td>£20,000</td>
+                            </tr>
+                            <tr>
+                                <td>Service Revenue</td>
+                                <td></td>
+                                <td>£18,000</td>
+                            </tr>
+                            <tr>
+                                <td>Rent Expense</td>
+                                <td>£3,500</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Utilities Expense</td>
+                                <td>£2,000</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Wages Expense</td>
+                                <td>£10,000</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total</strong></td>
+                                <td><strong>£60,500</strong></td>
+                                <td><strong>£60,500</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h2>Modern Ledgers</h2>
+            <p>Today's computerized accounting systems automatically:</p>
+            <ul>
+                <li>Post journal entries to the appropriate ledger accounts</li>
+                <li>Calculate account balances in real-time</li>
+                <li>Generate trial balances on demand</li>
+                <li>Produce financial statements directly from ledger data</li>
+            </ul>
+            
+            <a href="../index.html#learn" class="back-link">← Back to Learn</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="../index.html">Double<span>Entry</span></a>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="../index.html#games">Games</a></li>
+                    <li><a href="../index.html#learn">Learn</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>contact@doubleentry.edu</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DoubleEntry. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
