@@ -2,116 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Ledger | Double Entry</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>The Ledger | Double Entry</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/learn-pages.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .learn-page-content {
-            padding: 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .learn-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-        }
-        .learn-table th, .learn-table td {
-            border: 1px solid #e6e6e6;
-            padding: 1rem;
-            text-align: left;
-        }
-        .learn-table th {
-            background-color: #f5f5f7;
-        }
-        .example-box {
-            background-color: #f5f5f7;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-        .ledger-flow {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-        .ledger-step {
-            background-color: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 1rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            flex: 1;
-            min-width: 250px;
-            position: relative;
-        }
-        .ledger-step:not(:last-child):after {
-            content: "→";
-            position: absolute;
-            right: -15px;
-            top: 50%;
-            font-size: 24px;
-            color: #0066cc;
-        }
-        .t-account {
-            margin: 1.5rem 0;
-            border-top: 2px solid #000;
-            position: relative;
-        }
-        .t-account:before {
-            content: "";
-            height: 100%;
-            width: 1px;
-            background-color: #000;
-            position: absolute;
-            left: 50%;
-            top: 0;
-        }
-        .t-account-header {
-            text-align: center;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .t-account-content {
-            display: flex;
-        }
-        .t-account-content div {
-            width: 50%;
-            padding: 5px 10px;
-        }
-        .t-account-label {
-            display: flex;
-            justify-content: space-between;
-        }
-        .t-account-label div {
-            width: 50%;
-            text-align: center;
-            font-weight: bold;
-        }
-        .back-link {
-            display: inline-block;
-            margin: 1rem 0;
-            color: #0066cc;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            .ledger-step:not(:last-child):after {
-                content: "↓";
-                position: static;
-                display: block;
-                text-align: center;
-                margin: 1rem 0;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -133,10 +29,8 @@
                 <h1>The Ledger</h1>
                 <p>Understanding how transactions are recorded and tracked in accounting</p>
             </div>
-        </section>
-
-        <section class="learn-page-content">
-            <a href="../index.html#learn" class="back-link">← Back to Learn</a>
+        </section>        <section class="learn-page-content">
+            <a href="../index.html#learn" class="back-link">Back to Learn</a>
             
             <h2>What is a Ledger?</h2>
             <p>A ledger is a book or collection of accounts where transactions are recorded. In today's accounting systems, ledgers are typically computerized, but the concept remains the same: to organize financial information by account.</p>
@@ -378,8 +272,7 @@
                 <li>Generate trial balances on demand</li>
                 <li>Produce financial statements directly from ledger data</li>
             </ul>
-            
-            <a href="../index.html#learn" class="back-link">← Back to Learn</a>
+              <a href="../index.html#learn" class="back-link">Back to Learn</a>
         </section>
     </main>
 

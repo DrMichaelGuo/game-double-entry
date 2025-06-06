@@ -1,0 +1,296 @@
+/* 
+   Learn pages stylesheet for Double Entry Accounting
+   Apple-inspired design with clean, minimalist aesthetics
+*/
+
+.learn-page-content {
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.8rem;
+    line-height: 1.6;
+}
+
+.learn-page-content h2 {
+    font-size: 3.2rem;
+    font-weight: 600;
+    margin-top: 4.8rem;
+    margin-bottom: 1.6rem;
+    color: var(--dark-color);
+    letter-spacing: -0.02em;
+}
+
+.learn-page-content h3 {
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin-top: 3.2rem;
+    margin-bottom: 1.2rem;
+    color: var(--dark-color);
+}
+
+.learn-page-content p {
+    margin-bottom: 1.6rem;
+    color: #333;
+}
+
+.learn-page-content ul, 
+.learn-page-content ol {
+    margin-bottom: 2.4rem;
+    margin-left: 2rem;
+}
+
+.learn-page-content li {
+    margin-bottom: 0.8rem;
+}
+
+.learn-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2.4rem 0 3.2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.learn-table th, .learn-table td {
+    border: 1px solid #e6e6e6;
+    padding: 1.6rem;
+    text-align: left;
+}
+
+.learn-table th {
+    background-color: var(--light-color);
+    font-weight: 500;
+}
+
+.learn-table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.example-box {
+    background-color: var(--light-color);
+    border-radius: 12px;
+    padding: 2.4rem;
+    margin: 2.4rem 0 3.2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.example-box p:last-child {
+    margin-bottom: 0;
+}
+
+.example-box h4 {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+}
+
+.debit-column, .credit-column {
+    width: 50%;
+    float: left;
+}
+
+.t-account {
+    margin: 2rem 0;
+    border-top: 2px solid #000;
+    position: relative;
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.t-account:before {
+    content: "";
+    height: 100%;
+    width: 1px;
+    background-color: #000;
+    position: absolute;
+    left: 50%;
+    top: 0;
+}
+
+.t-account-header {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    padding: 0.8rem 0;
+}
+
+.t-account-content {
+    display: flex;
+    padding-bottom: 1rem;
+}
+
+.t-account-content div {
+    width: 50%;
+    padding: 1rem 1.6rem;
+    position: relative;
+}
+
+.t-account-label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.t-account-label div {
+    width: 50%;
+    text-align: center;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    color: var(--secondary-color);
+}
+
+.clearfix {
+    clear: both;
+}
+
+.back-link {
+    display: inline-block;
+    margin: 2rem 0;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.back-link:hover {
+    color: #004ba0;
+}
+
+.back-link:before {
+    content: "←";
+    margin-right: 0.6rem;
+}
+
+.account-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2.4rem;
+    margin: 1.6rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease;
+}
+
+.account-card:hover {
+    transform: translateY(-3px);
+}
+
+.account-type {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.ledger-flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3.2rem 0;
+    flex-wrap: wrap;
+}
+
+.ledger-step {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.ledger-step:hover {
+    transform: translateY(-3px);
+}
+
+.ledger-step:not(:last-child):after {
+    content: "→";
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    font-size: 24px;
+    color: var(--primary-color);
+    font-weight: 300;
+}
+
+.statement-container {
+    margin: 3.2rem 0;
+}
+
+.statement-title {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 1.6rem;
+    font-size: 1.8rem;
+    line-height: 1.4;
+}
+
+.financial-statement {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.financial-statement th, 
+.financial-statement td {
+    padding: 1.2rem;
+}
+
+.financial-statement th {
+    text-align: left;
+    font-weight: 500;
+}
+
+.financial-statement td {
+    text-align: right;
+}
+
+.financial-statement .total {
+    font-weight: 500;
+    border-top: 1px solid #000;
+}
+
+.financial-statement .section-header {
+    font-weight: 500;
+    padding-top: 1.6rem;
+}
+
+.financial-statement .indent {
+    padding-left: 3.2rem;
+}
+
+@media (max-width: 768px) {
+    .learn-page-content {
+        padding: 3.2rem 1.6rem;
+        font-size: 1.6rem;
+    }
+    
+    .learn-page-content h2 {
+        font-size: 2.8rem;
+    }
+    
+    .learn-page-content h3 {
+        font-size: 2.2rem;
+    }
+    
+    .learn-table th, 
+    .learn-table td {
+        padding: 1.2rem;
+    }
+    
+    .example-box {
+        padding: 2rem;
+    }
+    
+    .ledger-step:not(:last-child):after {
+        content: "↓";
+        position: static;
+        display: block;
+        text-align: center;
+        margin: 1rem 0;
+    }
+}
