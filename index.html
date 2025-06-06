@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Double Entry | Learn Accounting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Double Entry | Learn Accounting</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/game-cards.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -36,33 +36,54 @@
             <div class="section-header">
                 <h2>Accounting Games</h2>
                 <p>Develop your accounting skills through interactive gameplay</p>
-            </div>
-            <div class="games-grid">
-                <div class="game-card">
-                    <div class="game-thumbnail" style="background-image: url('assets/images/transaction-match.jpg');">
-                        <div class="game-overlay">
-                            <h3>Transaction Match</h3>
-                            <p>Match debit and credit entries</p>
-                            <a href="games/transaction-match.html" class="game-button">Play</a>
-                        </div>
+            </div>            <div class="games-grid">                <div class="game-card transaction-match">
+                    <div class="game-icon">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M56 16H40c-1.1 0-2-.9-2-2s.9-2 2-2h16c1.1 0 2 .9 2 2s-.9 2-2 2zM56 32H40c-1.1 0-2-.9-2-2s.9-2 2-2h16c1.1 0 2 .9 2 2s-.9 2-2 2zM56 48H40c-1.1 0-2-.9-2-2s.9-2 2-2h16c1.1 0 2 .9 2 2s-.9 2-2 2zM24 16H8c-1.1 0-2-.9-2-2s.9-2 2-2h16c1.1 0 2 .9 2 2s-.9 2-2 2zM24 32H8c-1.1 0-2-.9-2-2s.9-2 2-2h16c1.1 0 2 .9 2 2s-.9 2-2 2zM24 48H8c-1.1 0-2-.9-2-2s.9-2 2-2h16c1.1 0 2 .9 2 2s-.9 2-2 2z" />
+                            <path d="M36 14l-4 4-4-4 4-4z" />
+                            <path d="M32 10v16" stroke-width="2" stroke-linecap="round" />
+                            <path d="M36 46l-4-4-4 4 4 4z" />
+                            <path d="M32 54V38" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="game-content">
+                        <h3>Transaction Match</h3>
+                        <p>Match debit and credit entries for accounting transactions to build your understanding of the double entry system.</p>
+                        <a href="games/transaction-match.html" class="game-button">Play</a>
                     </div>
                 </div>
-                <div class="game-card">
-                    <div class="game-thumbnail" style="background-image: url('assets/images/balance-sheet.jpg');">
-                        <div class="game-overlay">
-                            <h3>Balance Builder</h3>
-                            <p>Create balanced financial statements</p>
-                            <a href="games/balance-builder.html" class="game-button">Play</a>
-                        </div>
+                  <div class="game-card balance-builder">
+                    <div class="game-icon">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="8" width="48" height="48" rx="4" fill="none" stroke-width="2" />
+                            <line x1="8" y1="20" x2="56" y2="20" stroke-width="2" />
+                            <line x1="32" y1="20" x2="32" y2="56" stroke-width="2" />
+                            <path d="M18 32c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6 2.7-6 6-6z" />
+                            <path d="M46 32c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6 2.7-6 6-6z" />
+                            <path d="M32 14l-8-4 8-4 8 4z" />
+                        </svg>
+                    </div>
+                    <div class="game-content">
+                        <h3>Balance Builder</h3>
+                        <p>Create balanced financial statements by categorising accounts and analyse the impact on your balance sheet.</p>
+                        <a href="games/balance-builder.html" class="game-button">Play</a>
                     </div>
                 </div>
-                <div class="game-card">
-                    <div class="game-thumbnail" style="background-image: url('assets/images/journal-entry.jpg');">
-                        <div class="game-overlay">
-                            <h3>Journal Journey</h3>
-                            <p>Record transactions in journal entries</p>
-                            <a href="games/journal-journey.html" class="game-button">Play</a>
-                        </div>
+                  <div class="game-card journal-journey">
+                    <div class="game-icon">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 8H14c-1.1 0-2 .9-2 2v44c0 1.1.9 2 2 2h36c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2z" fill="none" stroke-width="2" />
+                            <line x1="20" y1="16" x2="44" y2="16" stroke-width="2" />
+                            <line x1="20" y1="24" x2="44" y2="24" stroke-width="2" />
+                            <line x1="20" y1="32" x2="44" y2="32" stroke-width="2" />
+                            <line x1="20" y1="40" x2="44" y2="40" stroke-width="2" />
+                            <line x1="20" y1="48" x2="34" y2="48" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <div class="game-content">
+                        <h3>Journal Journey</h3>
+                        <p>Record business transactions in proper journal entry format following UK accounting standards and practices.</p>
+                        <a href="games/journal-journey.html" class="game-button">Play</a>
                     </div>
                 </div>
             </div>

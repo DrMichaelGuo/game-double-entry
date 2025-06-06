@@ -1,0 +1,146 @@
+/* 
+   Apple-style game cards for the Double Entry learning platform
+   Uses modern, clean design with vibrant colors and subtle gradients
+*/
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3.2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game-card {
+    background-color: var(--background-color);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+}
+
+/* Game card icons and gradients */
+.game-icon {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-icon svg {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    z-index: 2;
+    fill: white;
+    stroke: white;
+    transition: all 0.3s ease;
+}
+
+.game-icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+/* Transaction Match gradient */
+.transaction-match .game-icon::before {
+    background: linear-gradient(135deg, #5E5AEC 0%, #3F78E0 100%);
+}
+
+/* Balance Builder gradient */
+.balance-builder .game-icon::before {
+    background: linear-gradient(135deg, #33A8FF 0%, #0071E3 100%);
+}
+
+/* Journal Journey gradient */
+.journal-journey .game-icon::before {
+    background: linear-gradient(135deg, #FF2D55 0%, #FF9500 100%);
+}
+
+/* Card content */
+.game-content {
+    padding: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.game-content h3 {
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+}
+
+.game-content p {
+    color: var(--secondary-color);
+    font-size: 1.6rem;
+    margin-bottom: 2.4rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.game-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.2rem 2.8rem;
+    border-radius: 9999px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    transition: all var(--transition-speed) ease;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+    align-self: flex-start;
+}
+
+.game-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 113, 227, 0.4);
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .game-icon {
+        height: 150px;
+    }
+    
+    .game-icon svg {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .game-content {
+        padding: 2.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .game-icon {
+        height: 120px;
+    }
+}
