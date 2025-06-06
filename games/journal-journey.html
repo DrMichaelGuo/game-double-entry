@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Journey | Double Entry</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/games.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="game-page">
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">Double<span>Entry</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#games">Games</a></li>
+                <li><a href="../index.html#learn">Learn</a></li>
+                <li><a href="../index.html#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="game-header">
+            <div class="container">
+                <h1>Journal Journey</h1>
+                <p>Record transactions in proper journal entry format</p>
+            </div>
+        </section>
+
+        <section class="game-content">
+            <div class="container">
+                <div class="game-instructions">
+                    <h2>How to Play</h2>
+                    <ol>
+                        <li>Read the transaction description</li>
+                        <li>Select accounts from the dropdown menus</li>
+                        <li>Enter the correct amounts for each account</li>
+                        <li>Choose whether each account is debited or credited</li>
+                        <li>Check your answer and continue to the next transaction</li>
+                    </ol>
+
+                    <div class="difficulty-selector">
+                        <h3>Select Difficulty</h3>
+                        <div class="difficulty-buttons">
+                            <button class="difficulty-btn active" data-level="easy">Easy</button>
+                            <button class="difficulty-btn" data-level="medium">Medium</button>
+                            <button class="difficulty-btn" data-level="hard">Hard</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-area">
+                    <div class="game-status">
+                        <div class="score">Score: <span id="score">0</span></div>
+                        <div class="timer">Time: <span id="timer">00:00</span></div>
+                    </div>
+
+                    <div id="game-interface">
+                        <div class="transaction-card">
+                            <h3>Transaction:</h3>
+                            <p id="transaction-description">Purchased equipment for $10,000, paying $4,000 in cash and financing the remainder with a note payable.</p>
+                        </div>
+
+                        <div class="journal-entry">
+                            <h3>Journal Entry</h3>
+                            <div class="journal-table">
+                                <div class="journal-header">
+                                    <div class="journal-cell">Account</div>
+                                    <div class="journal-cell">Debit</div>
+                                    <div class="journal-cell">Credit</div>
+                                </div>
+                                <div id="journal-rows">
+                                    <!-- Journal rows will be added dynamically -->
+                                </div>
+                                <button id="add-row" class="secondary-btn">Add Account Row</button>
+                            </div>
+                        </div>
+
+                        <div class="journal-balance">
+                            <div class="balance-item">
+                                <span>Total Debits:</span>
+                                <span id="total-debits">$0</span>
+                            </div>
+                            <div class="balance-item">
+                                <span>Total Credits:</span>
+                                <span id="total-credits">$0</span>
+                            </div>
+                            <div class="balance-result" id="journal-balanced">
+                                Not Balanced
+                            </div>
+                        </div>
+
+                        <div class="game-controls">
+                            <button id="check-answer" class="primary-btn">Check Answer</button>
+                            <button id="next-transaction" class="secondary-btn" disabled>Next Transaction</button>
+                        </div>
+                    </div>
+
+                    <div id="game-feedback" class="hidden">
+                        <div id="feedback-content"></div>
+                        <button id="continue-game" class="primary-btn">Continue</button>
+                    </div>
+
+                    <div id="game-complete" class="hidden">
+                        <h2>Game Complete!</h2>
+                        <div class="final-score">
+                            <p>Your Score: <span id="final-score">0</span></p>
+                            <p>Time: <span id="final-time">00:00</span></p>
+                        </div>
+                        <div class="game-complete-buttons">
+                            <button id="play-again" class="primary-btn">Play Again</button>
+                            <a href="../index.html#games" class="secondary-btn">Back to Games</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="../index.html">Double<span>Entry</span></a>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="../index.html#games">Games</a></li>
+                    <li><a href="../index.html#learn">Learn</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>contact@doubleentry.edu</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DoubleEntry. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/journal-journey.js"></script>
+</body>
+</html>

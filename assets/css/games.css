@@ -328,6 +328,92 @@
     color: white;
 }
 
+/* Additional Styles for Balance Builder Game */
+.accounts-container {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    padding: 2.4rem;
+    margin-bottom: 3.2rem;
+}
+
+.accounts-container h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.statement-builder {
+    margin-bottom: 3.2rem;
+}
+
+.statement-section h3 {
+    font-size: 2.4rem;
+    margin-bottom: 2.4rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.statement-category {
+    margin-bottom: 2.4rem;
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+}
+
+.statement-category h4 {
+    font-size: 2rem;
+    margin-bottom: 1.6rem;
+    color: var(--dark-color);
+}
+
+.statement-dropzone {
+    min-height: 10rem;
+    border: 2px dashed #ccc;
+    border-radius: var(--border-radius);
+    padding: 1.6rem;
+    transition: all var(--transition-speed) ease;
+}
+
+.statement-dropzone.drag-over {
+    border-color: var(--primary-color);
+    background-color: rgba(0, 113, 227, 0.05);
+}
+
+.placed-account {
+    margin: 0.8rem 0;
+    text-align: left;
+}
+
+.balance-checker {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    padding: 2.4rem;
+    margin-bottom: 3.2rem;
+}
+
+.balance-display {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    font-size: 1.8rem;
+}
+
+.balance-item {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+.balance-result {
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    background-color: var(--background-color);
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
     .game-content .container {
