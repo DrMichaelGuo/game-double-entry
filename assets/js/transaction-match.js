@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const creditDropzone = document.getElementById('credit-dropzone');
     const checkAnswerBtn = document.getElementById('check-answer');
     const nextTransactionBtn = document.getElementById('next-transaction');
+    const resetTransactionBtn = document.getElementById('reset-transaction');
     const continueGameBtn = document.getElementById('continue-game');
     const playAgainBtn = document.getElementById('play-again');
     const difficultyBtns = document.querySelectorAll('.difficulty-btn');
@@ -151,6 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Event listeners for game controls
         checkAnswerBtn.addEventListener('click', checkAnswer);
         nextTransactionBtn.addEventListener('click', nextTransaction);
+        resetTransactionBtn.addEventListener('click', resetCurrentTransaction);
         continueGameBtn.addEventListener('click', continueAfterFeedback);
         playAgainBtn.addEventListener('click', resetGame);
 
@@ -226,6 +228,20 @@ document.addEventListener('DOMContentLoaded', () => {
         gameState.creditSelection = null;
         checkAnswerBtn.disabled = false;
         nextTransactionBtn.disabled = true;
+    }
+
+    // Reset current transaction without affecting score/timer
+    function resetCurrentTransaction() {
+        resetDropzones();
+        
+        // Remove any feedback styling from accounts
+        const accountItems = accountsList.querySelectorAll('.account-item');
+        accountItems.forEach(item => {
+            item.classList.remove('correct-answer', 'incorrect-answer');
+        });
+        
+        // Hide feedback if showing
+        gameFeedback.classList.add('hidden');
     }
 
     // Check if the provided answer is correct

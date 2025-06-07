@@ -272,6 +272,31 @@
     cursor: not-allowed;
 }
 
+.reset-btn {
+    background-color: #ff9500;
+    color: white;
+    padding: 1.6rem 3.2rem;
+    border-radius: 9999px;
+    border: none;
+    font-size: 1.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.reset-btn:hover {
+    background-color: #e6850e;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(255, 149, 0, 0.3);
+}
+
+.reset-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
 /* Feedback and Game Complete Screens */
 #game-feedback, #game-complete {
     position: absolute;

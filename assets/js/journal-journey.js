@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const journalBalancedDisplay = document.getElementById('journal-balanced');
     const checkAnswerBtn = document.getElementById('check-answer');
     const nextTransactionBtn = document.getElementById('next-transaction');
+    const resetTransactionBtn = document.getElementById('reset-transaction');
     const continueGameBtn = document.getElementById('continue-game');
     const playAgainBtn = document.getElementById('play-again');
     const difficultyBtns = document.querySelectorAll('.difficulty-btn');
@@ -302,6 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
         addRowBtn.addEventListener('click', addJournalRow);
         checkAnswerBtn.addEventListener('click', checkAnswer);
         nextTransactionBtn.addEventListener('click', nextTransaction);
+        resetTransactionBtn.addEventListener('click', resetCurrentTransaction);
         continueGameBtn.addEventListener('click', continueAfterFeedback);
         playAgainBtn.addEventListener('click', resetGame);
     }
@@ -701,6 +703,19 @@ document.addEventListener('DOMContentLoaded', () => {
             nextTransactionBtn.disabled = true;
             checkAnswerBtn.disabled = false;
         }
+    }
+
+    // Reset the current transaction
+    function resetCurrentTransaction() {
+        // Hide any feedback
+        gameFeedback.classList.add('hidden');
+        
+        // Reset button states
+        checkAnswerBtn.disabled = false;
+        nextTransactionBtn.disabled = true;
+        
+        // Reload the current transaction to reset journal entries
+        loadTransaction(gameState.currentTransactionIndex);
     }
 
     // End the game and show final score

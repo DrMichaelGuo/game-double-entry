@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const balanceResultDisplay = document.getElementById('balance-result');
     const checkAnswerBtn = document.getElementById('check-answer');
     const nextProblemBtn = document.getElementById('next-problem');
+    const resetProblemBtn = document.getElementById('reset-problem');
     const continueGameBtn = document.getElementById('continue-game');
     const playAgainBtn = document.getElementById('play-again');
     const difficultyBtns = document.querySelectorAll('.difficulty-btn');
@@ -166,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Event listeners for game controls
         checkAnswerBtn.addEventListener('click', checkAnswer);
         nextProblemBtn.addEventListener('click', nextProblem);
+        resetProblemBtn.addEventListener('click', resetCurrentProblem);
         continueGameBtn.addEventListener('click', continueAfterFeedback);
         playAgainBtn.addEventListener('click', resetGame);
 
@@ -427,6 +429,22 @@ document.addEventListener('DOMContentLoaded', () => {
             nextProblemBtn.disabled = true;
             checkAnswerBtn.disabled = false;
         }
+    }
+
+    // Reset the current problem
+    function resetCurrentProblem() {
+        // Reset dropzones and clear all placed accounts
+        resetDropzones();
+        
+        // Hide any feedback
+        gameFeedback.classList.add('hidden');
+        
+        // Reset button states
+        checkAnswerBtn.disabled = false;
+        nextProblemBtn.disabled = true;
+        
+        // Reload the current problem to reset draggable accounts
+        loadProblem(gameState.currentProblemIndex);
     }
 
     // End the game and show final score
