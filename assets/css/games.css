@@ -448,7 +448,7 @@
 
 @media (max-width: 768px) {
     .game-header {
-        padding: 4.8rem 0;
+        padding: 8rem 2.4rem 4.8rem;
     }
 
     .game-header h1 {
@@ -470,15 +470,33 @@
 
     .game-controls {
         flex-direction: column;
+        gap: 1.6rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .game-header {
+        padding: 10rem 1.6rem 3.2rem;
+    }
+
+    .game-header h1 {
+        font-size: 2.8rem;
+        line-height: 1.2;
+    }
+
+    .game-header p {
+        font-size: 1.6rem;
+    }
+    
+    .game-controls {
+        flex-direction: column;
         align-items: center;
     }
 
     .primary-btn, .secondary-btn {
         width: 100%;
     }
-}
 
-@media (max-width: 576px) {
     .game-instructions {
         padding: 2.4rem;
     }

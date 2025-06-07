@@ -398,8 +398,19 @@ footer {
     }
 
     nav {
-        flex-direction: column;
+        padding: 1.2rem 1.6rem;
+    }
+
+    .logo a {
+        font-size: 2rem;
+    }
+
+    .nav-links {
         gap: 2rem;
+    }
+
+    .nav-links li a {
+        font-size: 1.4rem;
     }
 
     .games-grid, .learn-content, .footer-content {
