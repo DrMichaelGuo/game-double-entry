@@ -542,10 +542,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 type: accountType
             };
             
-            // Remove placeholder if it exists
+            // Remove placeholder if it exists (but keep other content)
             const placeholder = this.querySelector('.placeholder');
             if (placeholder) {
-                this.innerHTML = '';
+                placeholder.remove();
             }
             
             // If the account is already placed elsewhere, remove it
