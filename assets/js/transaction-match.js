@@ -33,102 +33,105 @@ document.addEventListener('DOMContentLoaded', () => {
         difficulty: 'easy',
         timerInterval: null,
         draggingElement: null,
-        debitSelection: null,
-        creditSelection: null
+        debitSelections: [],
+        creditSelections: []
     };
 
     // Transaction data by difficulty
     const transactionData = {
         easy: [
-            {                description: "Purchased office equipment for £5,000 in cash.",
-                correctDebit: "Office Equipment",
-                correctCredit: "Cash",
+            {
+                description: "Purchased office equipment for £5,000 in cash.",
+                correctDebit: ["Office Equipment"],
+                correctCredit: ["Cash"],
                 accounts: ["Office Equipment", "Cash", "Trade Payables", "Office Supplies", "Equipment Expense"]
             },
             {
                 description: "Received £3,000 cash from clients for services performed.",
-                correctDebit: "Cash",
-                correctCredit: "Service Revenue",
+                correctDebit: ["Cash"],
+                correctCredit: ["Service Revenue"],
                 accounts: ["Cash", "Service Revenue", "Trade Receivables", "Deferred Income", "Sales"]
             },
             {
                 description: "Paid £1,200 rent for the current month.",
-                correctDebit: "Rent Expense",
-                correctCredit: "Cash",
+                correctDebit: ["Rent Expense"],
+                correctCredit: ["Cash"],
                 accounts: ["Rent Expense", "Cash", "Trade Payables", "Prepaid Rent", "Office Expense"]
             },
             {
                 description: "Owner invested £10,000 cash into the business.",
-                correctDebit: "Cash",
-                correctCredit: "Owner's Capital",
+                correctDebit: ["Cash"],
+                correctCredit: ["Owner's Capital"],
                 accounts: ["Cash", "Owner's Capital", "Ordinary Shares", "Investment Revenue", "Loans Payable"]
             },
             {
                 description: "Purchased £800 of office supplies on account.",
-                correctDebit: "Office Supplies",
-                correctCredit: "Trade Payables",
+                correctDebit: ["Office Supplies"],
+                correctCredit: ["Trade Payables"],
                 accounts: ["Office Supplies", "Trade Payables", "Cash", "Supplies Expense", "Prepaid Expenses"]
             }
         ],
         medium: [
-            {                description: "Paid £2,500 to settle trade payables from previous purchase.",
-                correctDebit: "Trade Payables",
-                correctCredit: "Cash",
+            {
+                description: "Paid £2,500 to settle trade payables from previous purchase.",
+                correctDebit: ["Trade Payables"],
+                correctCredit: ["Cash"],
                 accounts: ["Trade Payables", "Cash", "Trade Receivables", "Loans Payable", "Accrued Expenses"]
             },
             {
                 description: "Billed clients £4,500 for services rendered on account.",
-                correctDebit: "Trade Receivables",
-                correctCredit: "Service Revenue",
+                correctDebit: ["Trade Receivables"],
+                correctCredit: ["Service Revenue"],
                 accounts: ["Trade Receivables", "Service Revenue", "Cash", "Deferred Income", "Sales"]
             },
             {
                 description: "Received £1,800 advance payment from customer for services to be provided next month.",
-                correctDebit: "Cash",
-                correctCredit: "Deferred Income",
+                correctDebit: ["Cash"],
+                correctCredit: ["Deferred Income"],
                 accounts: ["Cash", "Deferred Income", "Service Revenue", "Trade Receivables", "Prepaid Expenses"]
             },
             {
                 description: "Recorded depreciation of £1,200 on equipment.",
-                correctDebit: "Depreciation Expense",
-                correctCredit: "Accumulated Depreciation",
+                correctDebit: ["Depreciation Expense"],
+                correctCredit: ["Accumulated Depreciation"],
                 accounts: ["Depreciation Expense", "Accumulated Depreciation", "Equipment", "Cash", "Accrued Expenses"]
             },
             {
                 description: "Paid £3,200 for a two-year insurance policy in advance.",
-                correctDebit: "Prepaid Insurance",
-                correctCredit: "Cash",
+                correctDebit: ["Prepaid Insurance"],
+                correctCredit: ["Cash"],
                 accounts: ["Prepaid Insurance", "Cash", "Insurance Expense", "Trade Payables", "Accrued Expenses"]
             }
         ],
         hard: [
-            {                description: "Recorded adjusting entry for £600 of accrued wages at month-end.",
-                correctDebit: "Wage Expense",
-                correctCredit: "Wages Payable",
+            {
+                description: "Recorded adjusting entry for £600 of accrued wages at month-end.",
+                correctDebit: ["Wage Expense"],
+                correctCredit: ["Wages Payable"],
                 accounts: ["Wage Expense", "Wages Payable", "Cash", "Prepaid Wages", "Accrued Expenses"]
             },
             {
                 description: "Sold equipment with original cost of £8,000 and accumulated depreciation of £5,000 for £2,500 cash.",
-                correctDebit: "Cash, Accumulated Depreciation",
-                correctCredit: "Equipment, Loss on Sale",
+                correctDebit: ["Cash", "Accumulated Depreciation"],
+                correctCredit: ["Equipment", "Loss on Sale"],
                 accounts: ["Cash", "Accumulated Depreciation", "Equipment", "Loss on Sale", "Gain on Sale"]
             },
             {
                 description: "Recognised £1,500 of previously deferred income upon completion of services.",
-                correctDebit: "Deferred Income",
-                correctCredit: "Service Revenue",
+                correctDebit: ["Deferred Income"],
+                correctCredit: ["Service Revenue"],
                 accounts: ["Deferred Income", "Service Revenue", "Cash", "Trade Receivables", "Deferred Revenue"]
             },
             {
                 description: "Issued debentures with par value of £50,000 for £48,000 cash (discount).",
-                correctDebit: "Cash, Debenture Discount",
-                correctCredit: "Debentures Payable",
+                correctDebit: ["Cash", "Debenture Discount"],
+                correctCredit: ["Debentures Payable"],
                 accounts: ["Cash", "Debenture Discount", "Debentures Payable", "Debenture Premium", "Interest Expense"]
             },
             {
                 description: "Recognised £1,200 of previously prepaid rent expense that has now expired.",
-                correctDebit: "Rent Expense",
-                correctCredit: "Prepaid Rent",
+                correctDebit: ["Rent Expense"],
+                correctCredit: ["Prepaid Rent"],
                 accounts: ["Rent Expense", "Prepaid Rent", "Cash", "Trade Payables", "Accrued Expenses"]
             }
         ]
@@ -166,8 +169,8 @@ document.addEventListener('DOMContentLoaded', () => {
         gameState.score = 0;
         gameState.timer = 0;
         gameState.currentTransactionIndex = 0;
-        gameState.debitSelection = null;
-        gameState.creditSelection = null;
+        gameState.debitSelections = [];
+        gameState.creditSelections = [];
 
         // Reset UI displays
         scoreDisplay.textContent = '0';
@@ -224,8 +227,18 @@ document.addEventListener('DOMContentLoaded', () => {
     function resetDropzones() {
         debitDropzone.innerHTML = '<p class="placeholder">Drag account here</p>';
         creditDropzone.innerHTML = '<p class="placeholder">Drag account here</p>';
-        gameState.debitSelection = null;
-        gameState.creditSelection = null;
+        gameState.debitSelections = [];
+        gameState.creditSelections = [];
+        checkAnswerBtn.disabled = false;
+        nextTransactionBtn.disabled = true;
+    }
+
+    // Reset dropzones to initial state
+    function resetDropzones() {
+        debitDropzone.innerHTML = '<p class="placeholder">Drag account here</p>';
+        creditDropzone.innerHTML = '<p class="placeholder">Drag account here</p>';
+        gameState.debitSelections = [];
+        gameState.creditSelections = [];
         checkAnswerBtn.disabled = false;
         nextTransactionBtn.disabled = true;
     }
@@ -248,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function checkAnswer() {
         const currentTransaction = gameState.transactions[gameState.currentTransactionIndex];
         
-        if (!gameState.debitSelection || !gameState.creditSelection) {
+        if (gameState.debitSelections.length === 0 || gameState.creditSelections.length === 0) {
             feedbackContent.innerHTML = `
                 <h2>Incomplete Entry</h2>
                 <p>Please drag accounts to both debit and credit positions.</p>
@@ -257,20 +270,21 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         
-        const debitCorrect = gameState.debitSelection === currentTransaction.correctDebit;
-        const creditCorrect = gameState.creditSelection === currentTransaction.correctCredit;
+        // Check if the selections match the correct answers
+        const debitCorrect = arraysEqual(gameState.debitSelections.sort(), currentTransaction.correctDebit.sort());
+        const creditCorrect = arraysEqual(gameState.creditSelections.sort(), currentTransaction.correctCredit.sort());
 
         // Add visual indicators
-        const debitAccount = debitDropzone.querySelector('.account-item');
-        const creditAccount = creditDropzone.querySelector('.account-item');
+        const debitItems = debitDropzone.querySelectorAll('.account-item');
+        const creditItems = creditDropzone.querySelectorAll('.account-item');
         
-        if (debitAccount) {
-            debitAccount.classList.add(debitCorrect ? 'correct-answer' : 'incorrect-answer');
-        }
+        debitItems.forEach(item => {
+            item.classList.add(debitCorrect ? 'correct-answer' : 'incorrect-answer');
+        });
         
-        if (creditAccount) {
-            creditAccount.classList.add(creditCorrect ? 'correct-answer' : 'incorrect-answer');
-        }
+        creditItems.forEach(item => {
+            item.classList.add(creditCorrect ? 'correct-answer' : 'incorrect-answer');
+        });
 
         // Update score and provide feedback
         if (debitCorrect && creditCorrect) {
@@ -281,8 +295,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h2>Correct!</h2>
                 <p>Perfect double entry! You've earned 100 points.</p>
                 <div class="feedback-detail">
-                    <p><strong>Debit:</strong> ${currentTransaction.correctDebit}</p>
-                    <p><strong>Credit:</strong> ${currentTransaction.correctCredit}</p>
+                    <p><strong>Debit:</strong> ${currentTransaction.correctDebit.join(', ')}</p>
+                    <p><strong>Credit:</strong> ${currentTransaction.correctCredit.join(', ')}</p>
                 </div>
             `;
         } else if (debitCorrect || creditCorrect) {
@@ -293,8 +307,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h2>Partially Correct</h2>
                 <p>You got one side right! You've earned 50 points.</p>
                 <div class="feedback-detail">
-                    <p><strong>Correct Debit:</strong> ${currentTransaction.correctDebit}</p>
-                    <p><strong>Correct Credit:</strong> ${currentTransaction.correctCredit}</p>
+                    <p><strong>Correct Debit:</strong> ${currentTransaction.correctDebit.join(', ')}</p>
+                    <p><strong>Correct Credit:</strong> ${currentTransaction.correctCredit.join(', ')}</p>
                 </div>
             `;
         } else {
@@ -302,8 +316,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h2>Incorrect</h2>
                 <p>Let's review the correct accounting entry:</p>
                 <div class="feedback-detail">
-                    <p><strong>Debit:</strong> ${currentTransaction.correctDebit}</p>
-                    <p><strong>Credit:</strong> ${currentTransaction.correctCredit}</p>
+                    <p><strong>Debit:</strong> ${currentTransaction.correctDebit.join(', ')}</p>
+                    <p><strong>Credit:</strong> ${currentTransaction.correctCredit.join(', ')}</p>
                 </div>
             `;
         }
@@ -311,6 +325,15 @@ document.addEventListener('DOMContentLoaded', () => {
         gameFeedback.classList.remove('hidden');
         checkAnswerBtn.disabled = true;
         nextTransactionBtn.disabled = false;
+    }
+
+    // Helper function to compare arrays for equality
+    function arraysEqual(a, b) {
+        if (a.length !== b.length) return false;
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] !== b[i]) return false;
+        }
+        return true;
     }
 
     // Continue after feedback is shown
@@ -415,39 +438,60 @@ document.addEventListener('DOMContentLoaded', () => {
         
         this.classList.remove('drag-over');
         
-        // Check if already has an account
-        if (this.querySelector('.account-item') && gameState.draggingElement.parentNode !== this) {
-            return false;
-        }
-
         const isDebitZone = this === debitDropzone;
         const isCreditZone = this === creditDropzone;
         
         if ((isDebitZone || isCreditZone) && gameState.draggingElement) {
-            // If dragged from another dropzone, restore the placeholder
-            if (gameState.draggingElement.parentNode === debitDropzone) {
-                debitDropzone.innerHTML = '<p class="placeholder">Drag account here</p>';
-                gameState.debitSelection = null;
-            } else if (gameState.draggingElement.parentNode === creditDropzone) {
-                creditDropzone.innerHTML = '<p class="placeholder">Drag account here</p>';
-                gameState.creditSelection = null;
+            const accountName = gameState.draggingElement.textContent;
+            
+            // Check if this account is already in this dropzone
+            const currentSelections = isDebitZone ? gameState.debitSelections : gameState.creditSelections;
+            if (currentSelections.includes(accountName)) {
+                return false;
             }
             
-            // Clear the dropzone and add the dragged element
-            this.innerHTML = '';
-            const accountItem = gameState.draggingElement.cloneNode(true);
-            accountItem.setAttribute('draggable', 'false');
-            this.appendChild(accountItem);
+            // Remove account from other dropzone if it was there
+            if (gameState.debitSelections.includes(accountName)) {
+                gameState.debitSelections = gameState.debitSelections.filter(acc => acc !== accountName);
+                updateDropzoneDisplay(debitDropzone, gameState.debitSelections);
+            }
+            if (gameState.creditSelections.includes(accountName)) {
+                gameState.creditSelections = gameState.creditSelections.filter(acc => acc !== accountName);
+                updateDropzoneDisplay(creditDropzone, gameState.creditSelections);
+            }
             
-            // Update the selection in game state
+            // Add account to the target dropzone
             if (isDebitZone) {
-                gameState.debitSelection = accountItem.textContent;
+                gameState.debitSelections.push(accountName);
+                updateDropzoneDisplay(debitDropzone, gameState.debitSelections);
             } else if (isCreditZone) {
-                gameState.creditSelection = accountItem.textContent;
+                gameState.creditSelections.push(accountName);
+                updateDropzoneDisplay(creditDropzone, gameState.creditSelections);
             }
         }
         
         return false;
+    }
+
+    // Update dropzone display with current selections
+    function updateDropzoneDisplay(dropzone, selections) {
+        if (selections.length === 0) {
+            dropzone.innerHTML = '<p class="placeholder">Drag account here</p>';
+        } else {
+            dropzone.innerHTML = '';
+            selections.forEach(accountName => {
+                const accountItem = document.createElement('div');
+                accountItem.className = 'account-item dropped';
+                accountItem.textContent = accountName;
+                accountItem.setAttribute('draggable', 'true');
+                
+                // Allow dragging out of dropzone
+                accountItem.addEventListener('dragstart', handleDragStart);
+                accountItem.addEventListener('dragend', handleDragEnd);
+                
+                dropzone.appendChild(accountItem);
+            });
+        }
     }
 
     // Start the game

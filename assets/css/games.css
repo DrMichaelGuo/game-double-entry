@@ -198,12 +198,15 @@
 }
 
 .entry-dropzone {
-    height: 12rem;
+    min-height: 12rem;
     border: 2px dashed #ccc;
     border-radius: var(--border-radius);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 0.8rem;
+    padding: 1.6rem;
     transition: all var(--transition-speed) ease;
 }
 
@@ -218,8 +221,20 @@
 }
 
 .entry-dropzone .account-item {
-    width: 80%;
+    width: 90%;
     text-align: center;
+    margin-bottom: 0.4rem;
+}
+
+.entry-dropzone .account-item.dropped {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.entry-dropzone .account-item.dropped:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
 }
 
 /* Game Controls */
@@ -437,6 +452,38 @@
     padding: 1rem;
     border-radius: var(--border-radius);
     background-color: var(--background-color);
+}
+
+/* Game Tips Section */
+.game-tips {
+    margin-top: 2.4rem;
+    padding: 2rem;
+    background-color: rgba(0, 113, 227, 0.05);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+}
+
+.game-tips h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+}
+
+.game-tips ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.game-tips li {
+    margin-bottom: 0.8rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.game-tips li:before {
+    content: "💡";
+    position: absolute;
+    left: 0;
 }
 
 /* Responsive Design */
